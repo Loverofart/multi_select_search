@@ -27,9 +27,6 @@ Easily buildable and customizable multi select widget with search field that can
 To start using the package, add the dependencies in your pubspec.yaml and import.
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 1. First, you need a list of items from same Class. 
    Your class model **MUST** have `fromJson` & `toJson` method.
 
@@ -73,12 +70,18 @@ class Contact {
 ```
 
 2. Now you are ready to use the `MultiSelectSearch` widget.
-   - in `itemBuilder` give your list item widget. 
-   - in `chipLabelKey` define which field value of your class should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
-   - in `items` give the list you created in step 1. Both items and itemBuilder must use the same list.
-   - If you want some of your list items to be selected beforehand, write those in `initialValue`.
-   - `onChanged` method returns the selected item list everytime a user selects/unselects an item.
-   - `clearAll` is a widget to clear all selected items when clicked. Do not use button widgets.
+   - `itemBuilder`
+    : Build your own list item widgets to select from.
+   - `chipLabelKey`
+    : A field name of your class that should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
+   - `items` 
+    : The list you created in step 1. Both items and itemBuilder must use the same list.
+   - `initialValue`
+    : Some of your list items to be selected beforehand.
+   - `onChanged`
+    : Returns the selected item list everytime a user selects/unselects an item.
+   - `clearAll`
+    : A widget to clear all selected items when clicked. Do not use button widgets.
 
 ```dart
 MultiSelectSearch<Contact>(
@@ -104,6 +107,8 @@ MultiSelectSearch<Contact>(
     ),
 ),
 ```
+
+1. To change 
 
 ## Additional information
 
