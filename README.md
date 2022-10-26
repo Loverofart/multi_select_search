@@ -1,4 +1,6 @@
-Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog.
+# Multiselect Search
+
+Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog
 
 ![ss3](ss3.gif) ![ss2](ss2.gif) ![ss1](ss1.gif)
 
@@ -13,49 +15,50 @@ Easily buildable and customizable multi select widget with search field that can
 ## Getting started
 
 To start using the package, add the dependencies in your pubspec.yaml and import.
+
 ## Usage
 
-1. First, you need a list of items from same Class. 
+1. First, you need a list of items from same Class.
    Your class model **MUST** have `fromJson` & `toJson` method.
 
-```dart
-var list = [
-      Contact(1, "Joel McHale"),
-      Contact(2, "Danny Pudi"),
-      Contact(3, "Donald Glover"),
-      Contact(4, "Gillian Jacobs"),
-      Contact(5, "Alison Brie"),
-      Contact(6, "Chevy Chase"),
-      Contact(7, "Jim Rush"),
-      Contact(8, "Yvette Nicole Brown"),
-      Contact(9, "Jeff Winger"),
-      Contact(10, "Abed Nadir"),
-      Contact(11, "Troy Barnes"),
-      Contact(12, "Britta Perry"),
-      Contact(13, "Annie Edison"),
-    ];
+    ```dart
+    var list = [
+        Contact(1, "Joel McHale"),
+        Contact(2, "Danny Pudi"),
+        Contact(3, "Donald Glover"),
+        Contact(4, "Gillian Jacobs"),
+        Contact(5, "Alison Brie"),
+        Contact(6, "Chevy Chase"),
+        Contact(7, "Jim Rush"),
+        Contact(8, "Yvette Nicole Brown"),
+        Contact(9, "Jeff Winger"),
+        Contact(10, "Abed Nadir"),
+        Contact(11, "Troy Barnes"),
+        Contact(12, "Britta Perry"),
+        Contact(13, "Annie Edison"),
+        ];
 
-class Contact {
-  final int id;
-  final String name;
+    class Contact {
+    final int id;
+    final String name;
 
-  Contact(
-    this.id,
-    this.name,
-  );
+    Contact(
+        this.id,
+        this.name,
+    );
 
-  Contact.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        name = json['name'];
+    Contact.fromJson(Map<String, dynamic> json)
+        : id = json['id'],
+            name = json['name'];
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-    };
-  }
-}
-```
+    Map<String, dynamic> toJson() {
+        return {
+        'id': id,
+        'name': name,
+        };
+    }
+    }
+    ```
 
 2. Now you are ready to use the `MultiSelectSearch` widget.
    - `itemBuilder`
@@ -66,7 +69,7 @@ class Contact {
    - `chipLabelKey`
     : A field name of your class that should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
 
-   - `items` 
+   - `items`
     : The list you created in step 1. Both items and itemBuilder must use the same list.
 
    - `initialValue`
@@ -80,33 +83,33 @@ class Contact {
 
     ![clear](clear.png)
 
-```dart
-MultiSelectSearch<Contact>(
-    itemBuilder: (Contact item) => ListTile(
-        key: ObjectKey(item),
-        leading: const Icon(Icons.person),
-        title: Text(item.name),
-    ),
-    chipLabelKey: 'name',
-    items: list,
-    initialValue: initial,
-    onChanged: (List<Contact> items) =>
-        setState(() => selectedItems = items),
-    decoration: BoxDecoration(
-        color: const Color(0xFFF7A072).withOpacity(0.6),
-        border: const Border(
-            bottom: BorderSide(color: Colors.grey),
+    ```dart
+    MultiSelectSearch<Contact>(
+        itemBuilder: (Contact item) => ListTile(
+            key: ObjectKey(item),
+            leading: const Icon(Icons.person),
+            title: Text(item.name),
+        ),
+        chipLabelKey: 'name',
+        items: list,
+        initialValue: initial,
+        onChanged: (List<Contact> items) =>
+            setState(() => selectedItems = items),
+        decoration: BoxDecoration(
+            color: const Color(0xFFF7A072).withOpacity(0.6),
+            border: const Border(
+                bottom: BorderSide(color: Colors.grey),
+            ),
+        ),
+        clearAll: const Padding(
+            padding: EdgeInsets.only(top: 10.0, right: 6.0),
+            child: Icon(Icons.clear),
         ),
     ),
-    clearAll: const Padding(
-        padding: EdgeInsets.only(top: 10.0, right: 6.0),
-        child: Icon(Icons.clear),
-    ),
-),
-```
+    ```
 
 3. To customize some styles:
-   
+
    - `maxHeight`: Search field & selected items container's maximum height when it's expanded.
 
    - `decoration`: Search field & selected items container decoration
@@ -114,12 +117,12 @@ MultiSelectSearch<Contact>(
    - `padding`: Search field & selected items container padding
   
    - `searchFieldDecoration`: `InputDecoration` to change search field's style, hint text and more.
-    
+
    ![style1](style1.png)
 
    - Selected item chip gets its style from the theme. In order to customize it, change `chipThemeData` in your AppTheme
 
-   ```
+   ```dart
    theme: ThemeData(
         primarySwatch: Colors.teal,
         chipTheme: const ChipThemeData(
@@ -127,7 +130,7 @@ MultiSelectSearch<Contact>(
           backgroundColor: Color(0xFFF9F7F3),
         ),
       ),
-   ``` 
+   ```
 
    ![chipStyle](chip.png)
 
