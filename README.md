@@ -108,7 +108,10 @@ MultiSelectSearch<Contact>(
 ),
 ```
 
-1. To change 
+3. To customize some styles:
+   
+   - `maxHeight`: Selected items list and search field container's maximum height when it's expanded.
+  image.png
 
 ## Additional information
 
