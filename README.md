@@ -2,7 +2,10 @@
 
 Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog
 
-![ss3](ss3.gif) ![ss2](ss2.gif) ![ss1](ss1.gif)
+![ss3](https://user-images.githubusercontent.com/34756693/198015842-83e5f7b1-dc55-4122-8368-2af76b0ac459.gif)
+![ss2](https://user-images.githubusercontent.com/34756693/198015830-d7f9d45e-f8c4-44b7-985b-3825efe9b14f.gif)
+![ss1](https://user-images.githubusercontent.com/34756693/198015847-155346a3-1a48-495a-8792-88d0975c066b.gif)
+
 
 ## Features
 
@@ -64,7 +67,7 @@ To start using the package, add the dependencies in your pubspec.yaml and import
    - `itemBuilder`
     : Build your own list item widgets to select from.
 
-    ![itemBuilder](itemBuilder.png)
+      ![itemBuilder](https://user-images.githubusercontent.com/34756693/198016065-dee0b226-0078-435d-850c-23ef75e3e7ef.png)
 
    - `chipLabelKey`
     : A field name of your class that should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
@@ -81,7 +84,8 @@ To start using the package, add the dependencies in your pubspec.yaml and import
    - `clearAll`
     : A widget to clear all selected items when clicked. Do not use button widgets.
 
-    ![clear](clear.png)
+      ![clear](https://user-images.githubusercontent.com/34756693/198016125-c547d3df-26c3-41da-b672-73e98b14df40.png)
+
 
     ```dart
     MultiSelectSearch<Contact>(
@@ -118,7 +122,8 @@ To start using the package, add the dependencies in your pubspec.yaml and import
   
    - `searchFieldDecoration`: `InputDecoration` to change search field's style, hint text and more.
 
-   ![style1](style1.png)
+       ![style1](https://user-images.githubusercontent.com/34756693/198016208-3e0578ce-aa70-4272-9942-a52814d266ad.png)
+
 
    - Selected item chip gets its style from the theme. In order to customize it, change `chipThemeData` in your AppTheme
 
@@ -132,7 +137,8 @@ To start using the package, add the dependencies in your pubspec.yaml and import
       ),
    ```
 
-   ![chipStyle](chip.png)
+    ![chip](https://user-images.githubusercontent.com/34756693/198016260-388fba21-3278-495a-9d5e-d952b0377b5f.png)
+
 
 ## Additional information
 
