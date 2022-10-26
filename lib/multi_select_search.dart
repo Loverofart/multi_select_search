@@ -1,7 +1,1 @@
-library multi_select_search;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:multi_select_search/multi_select_search.dart';
