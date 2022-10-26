@@ -72,16 +72,25 @@ class Contact {
 2. Now you are ready to use the `MultiSelectSearch` widget.
    - `itemBuilder`
     : Build your own list item widgets to select from.
+
+    ![itemBuilder](itemBuilder.png)
+
    - `chipLabelKey`
     : A field name of your class that should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
+
    - `items` 
     : The list you created in step 1. Both items and itemBuilder must use the same list.
+
    - `initialValue`
     : Some of your list items to be selected beforehand.
+
    - `onChanged`
     : Returns the selected item list everytime a user selects/unselects an item.
+
    - `clearAll`
     : A widget to clear all selected items when clicked. Do not use button widgets.
+
+    ![clear](clear.png)
 
 ```dart
 MultiSelectSearch<Contact>(
