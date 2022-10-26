@@ -37,3 +37,5 @@ const like = 'sample';
 TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
 from the package authors, and more.
+# multi_select_search
+A Flutter package that contains search text field and a list of items where you can select multiple items.
