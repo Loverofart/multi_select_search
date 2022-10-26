@@ -1,1 +1,1 @@
-export 'package:multi_select_search/multi_select_search.dart';
+export 'package:multi_select_search/src/multi_select_search.dart';

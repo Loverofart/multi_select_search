@@ -1,3 +1,5 @@
-## 0.0.1
+## 0.0.1 2022/10/26
 
-* TODO: Describe initial release.
+- Initially published multi_select_search package.
+- Includes example app.
+- Widgets: MultiSelectSearch, SearchField.
