@@ -11,31 +11,100 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog.
+
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Can be used in any Flutter widget. Wrap it in Container, dialog, bottom modal sheet etc.
+- User can search from your list of items.
+- Selected item chips list, search field, selectable item list are all visible in one.
+- List items are not hard-coded. You make your own list item widgets.
+- `onChanged` method returns a list of selected items every time user selects/unselect an item.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
+To start using the package, add the dependencies in your pubspec.yaml and import.
 ## Usage
 
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
+1. First, you need a list of items from same Class. 
+   Your class model **MUST** have `fromJson` & `toJson` method.
+
 ```dart
-const like = 'sample';
+var list = [
+      Contact(1, "Joel McHale"),
+      Contact(2, "Danny Pudi"),
+      Contact(3, "Donald Glover"),
+      Contact(4, "Gillian Jacobs"),
+      Contact(5, "Alison Brie"),
+      Contact(6, "Chevy Chase"),
+      Contact(7, "Jim Rush"),
+      Contact(8, "Yvette Nicole Brown"),
+      Contact(9, "Jeff Winger"),
+      Contact(10, "Abed Nadir"),
+      Contact(11, "Troy Barnes"),
+      Contact(12, "Britta Perry"),
+      Contact(13, "Annie Edison"),
+    ];
+
+class Contact {
+  final int id;
+  final String name;
+
+  Contact(
+    this.id,
+    this.name,
+  );
+
+  Contact.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        name = json['name'];
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+    };
+  }
+}
+```
+
+2. Now you are ready to use the `MultiSelectSearch` widget.
+   - in `itemBuilder` give your list item widget. 
+   - in `chipLabelKey` define which field value of your class should be displayed in selected item chip. In this example, we're displaying Contact's name field value in chip when selected. So it's `'name'`
+   - in `items` give the list you created in step 1. Both items and itemBuilder must use the same list.
+   - If you want some of your list items to be selected beforehand, write those in `initialValue`.
+   - `onChanged` method returns the selected item list everytime a user selects/unselects an item.
+   - `clearAll` is a widget to clear all selected items when clicked. Do not use button widgets.
+
+```dart
+MultiSelectSearch<Contact>(
+    itemBuilder: (Contact item) => ListTile(
+        key: ObjectKey(item),
+        leading: const Icon(Icons.person),
+        title: Text(item.name),
+    ),
+    chipLabelKey: 'name',
+    items: list,
+    initialValue: initial,
+    onChanged: (List<Contact> items) =>
+        setState(() => selectedItems = items),
+    decoration: BoxDecoration(
+        color: const Color(0xFFF7A072).withOpacity(0.6),
+        border: const Border(
+            bottom: BorderSide(color: Colors.grey),
+        ),
+    ),
+    clearAll: const Padding(
+        padding: EdgeInsets.only(top: 10.0, right: 6.0),
+        child: Icon(Icons.clear),
+    ),
+),
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
-# multi_select_search
-A Flutter package that contains search text field and a list of items where you can select multiple items.
+Feel free to create issue for any bugs or requests.

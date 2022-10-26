@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:multi_select_search/src/search_field.dart';
 
 /// Make sure your model class must contain fromJson & toJson method/
-/// If you want to change selected item [Chip] theme change it in your AppTheme
+/// If you want to change selected item [Chip] theme change [chipThemeData] in your AppTheme
 class MultiSelectSearch<T> extends StatefulWidget {
   /// A builder to display list of widgets that you can select/unselect from.
   final Widget Function(T) itemBuilder;
@@ -15,10 +15,10 @@ class MultiSelectSearch<T> extends StatefulWidget {
   /// In this situation, you define chipLabelKey: 'name'
   final String chipLabelKey;
 
-  /// List of all items to select from.
+  /// List of all items to select from
   final List<T> items;
 
-  /// The list of initial selected values
+  /// The list of initial selected items
   final List<T> initialValue;
 
   /// Search field & selected items [Container]'s max height
@@ -33,7 +33,7 @@ class MultiSelectSearch<T> extends StatefulWidget {
   /// Called everytime when user selects or unselects an item.
   /// Returns selected items.
   /// If user selects an item it gets added to the selected items.
-  /// If user unselect by tapping on deleteIcon on the chip it gets removed from the selected items.
+  /// If user unselect by tapping on deleteIcon on the chip, it gets removed from the selected items.
   final void Function(List<T> data) onChanged;
 
   /// Search field input decoration to change its style, hint text and more.
@@ -58,8 +58,8 @@ class MultiSelectSearch<T> extends StatefulWidget {
     this.decoration,
     this.chipTextStyle,
     required this.items,
-    this.emptyListIndicator,
     required this.onChanged,
+    this.emptyListIndicator,
     required this.itemBuilder,
     required this.initialValue,
     this.searchFieldDecoration,
