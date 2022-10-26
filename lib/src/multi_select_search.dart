@@ -27,7 +27,7 @@ class MultiSelectSearch<T> extends StatefulWidget {
   /// Search field & selected items [Container] decoration
   final Decoration? decoration;
 
-  /// Search field & selected items [Container] decoration
+  /// Search field & selected items [Container] padding
   final EdgeInsetsGeometry? padding;
 
   /// Called everytime when user selects or unselects an item.

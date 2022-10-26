@@ -110,8 +110,29 @@ MultiSelectSearch<Contact>(
 
 3. To customize some styles:
    
-   - `maxHeight`: Selected items list and search field container's maximum height when it's expanded.
-   ![maxHeight](maxHeight.png)
+   - `maxHeight`: Search field & selected items container's maximum height when it's expanded.
+
+   - `decoration`: Search field & selected items container decoration
+
+   - `padding`: Search field & selected items container padding
+  
+   - `searchFieldDecoration`: `InputDecoration` to change search field's style, hint text and more.
+    
+   ![style1](style1.png)
+
+   - Selected item chip gets its style from the theme. In order to customize it, change `chipThemeData` in your AppTheme
+
+   ```
+   theme: ThemeData(
+        primarySwatch: Colors.teal,
+        chipTheme: const ChipThemeData(
+          deleteIconColor: Color.fromARGB(255, 61, 61, 61),
+          backgroundColor: Color(0xFFF9F7F3),
+        ),
+      ),
+   ``` 
+
+   ![chipStyle](chip.png)
 
 ## Additional information
 
