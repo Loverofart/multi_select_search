@@ -3,3 +3,6 @@
 - Initially published multi_select_search package.
 - Includes example app.
 - Widgets: MultiSelectSearch, SearchField.
+## 0.0.2 2022/10/26
+
+- Updated gifs & images in README

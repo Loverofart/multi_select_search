@@ -1,6 +1,6 @@
 name: multi_select_search
-description: A Flutter package that contains search text field and a list of items where you can select multiple items.
-version: 0.0.1
+description: Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog
+version: 0.0.2
 homepage: https://github.com/Loverofart/multi_select_search
 
 environment:
