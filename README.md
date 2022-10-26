@@ -13,6 +13,7 @@ and the Flutter guide for
 
 Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog.
 
+![ss1](ss1.gif) ![ss2](ss2.gif)
 
 ## Features
 

@@ -208,6 +208,7 @@ class _MultiSelectSearchState<T> extends State<MultiSelectSearch<T>> {
     _controller.clear();
     _listViewItems.value = [...widget.items];
     _availableItems = [...widget.items];
+    widget.onChanged.call(_selectedItems);
   }
 
   void _deleteChip(T item) {
