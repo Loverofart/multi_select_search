@@ -42,24 +42,24 @@ To start using the package, add the dependencies in your pubspec.yaml and import
         ];
 
     class Contact {
-    final int id;
-    final String name;
+        final int id;
+        final String name;
 
-    Contact(
-        this.id,
-        this.name,
-    );
+        Contact(
+            this.id,
+            this.name,
+        );
 
-    Contact.fromJson(Map<String, dynamic> json)
-        : id = json['id'],
-            name = json['name'];
+        Contact.fromJson(Map<String, dynamic> json)
+            : id = json['id'],
+                name = json['name'];
 
-    Map<String, dynamic> toJson() {
-        return {
-        'id': id,
-        'name': name,
-        };
-    }
+        Map<String, dynamic> toJson() {
+                return {
+                'id': id,
+                'name': name,
+                };
+            }
     }
     ```
 
@@ -86,31 +86,30 @@ To start using the package, add the dependencies in your pubspec.yaml and import
 
       ![clear](https://user-images.githubusercontent.com/34756693/198016125-c547d3df-26c3-41da-b672-73e98b14df40.png)
 
-
-    ```dart
-    MultiSelectSearch<Contact>(
-        itemBuilder: (Contact item) => ListTile(
-            key: ObjectKey(item),
-            leading: const Icon(Icons.person),
-            title: Text(item.name),
-        ),
-        chipLabelKey: 'name',
-        items: list,
-        initialValue: initial,
-        onChanged: (List<Contact> items) =>
-            setState(() => selectedItems = items),
-        decoration: BoxDecoration(
-            color: const Color(0xFFF7A072).withOpacity(0.6),
-            border: const Border(
-                bottom: BorderSide(color: Colors.grey),
+        ```dart
+        MultiSelectSearch<Contact>(
+            itemBuilder: (Contact item) => ListTile(
+                key: ObjectKey(item),
+                leading: const Icon(Icons.person),
+                title: Text(item.name),
+            ),
+            chipLabelKey: 'name',
+            items: list,
+            initialValue: initial,
+            onChanged: (List<Contact> items) =>
+                setState(() => selectedItems = items),
+            decoration: BoxDecoration(
+                color: const Color(0xFFF7A072).withOpacity(0.6),
+                border: const Border(
+                    bottom: BorderSide(color: Colors.grey),
+                ),
+            ),
+            clearAll: const Padding(
+                padding: EdgeInsets.only(top: 10.0, right: 6.0),
+                child: Icon(Icons.clear),
             ),
         ),
-        clearAll: const Padding(
-            padding: EdgeInsets.only(top: 10.0, right: 6.0),
-            child: Icon(Icons.clear),
-        ),
-    ),
-    ```
+        ```
 
 3. To customize some styles:
 
@@ -124,21 +123,19 @@ To start using the package, add the dependencies in your pubspec.yaml and import
 
        ![style1](https://user-images.githubusercontent.com/34756693/198016208-3e0578ce-aa70-4272-9942-a52814d266ad.png)
 
-
    - Selected item chip gets its style from the theme. In order to customize it, change `chipThemeData` in your AppTheme
 
-   ```dart
-   theme: ThemeData(
-        primarySwatch: Colors.teal,
-        chipTheme: const ChipThemeData(
-          deleteIconColor: Color.fromARGB(255, 61, 61, 61),
-          backgroundColor: Color(0xFFF9F7F3),
-        ),
-      ),
-   ```
+        ```dart
+        theme: ThemeData(
+                primarySwatch: Colors.teal,
+                chipTheme: const ChipThemeData(
+                deleteIconColor: Color.fromARGB(255, 61, 61, 61),
+                backgroundColor: Color(0xFFF9F7F3),
+                ),
+            ),
+        ```
 
     ![chip](https://user-images.githubusercontent.com/34756693/198016260-388fba21-3278-495a-9d5e-d952b0377b5f.png)
-
 
 ## Additional information
 
