@@ -1,6 +1,6 @@
 name: multi_select_search
 description: Easily buildable and customizable multi select widget with search field that can be used anywhere from container to dialog
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/Loverofart/multi_select_search
 
 environment:

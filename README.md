@@ -135,7 +135,7 @@ To start using the package, add the dependencies in your pubspec.yaml and import
             ),
         ```
 
-    ![chip](https://user-images.githubusercontent.com/34756693/198016260-388fba21-3278-495a-9d5e-d952b0377b5f.png)
+        ![chip](https://user-images.githubusercontent.com/34756693/198016260-388fba21-3278-495a-9d5e-d952b0377b5f.png)
 
 ## Additional information
 
